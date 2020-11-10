@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <META name="description" content="shopping cart project with HTML5 and JavaScript">
+    <META name="keywords" content="HTML5,CSS,JavaScript, html5 session storage, html5 local storage">
+    <META name="author" content="dcwebmakers.com">
+
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="todo.css">
+
+
+   
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.min.js"></script>
+    <title>Tableau|intelligent</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content container">
+        <div class="header-logo f-title"> Smart Board </div>
+      </div>
+    </header>
+    
+  <main>
+    <div class="main-content container">
+      <div class="wrapper">
+        <div class="box box1">
+          <table>
+            <thead>
+                <tr>
+                  <th colspan="2">Appointment
+                  </th>
+                </tr>
+            </thead>
+          </table>
+        
+          <div class="todo-grid-parent">
+        
+            <div>
+              <div class="todo-input todo-block">
+                <input type="text" placeholder="Enter new to-do">
+              
+                <input type="text" placeholder="Enter category" list="categoryList">
+                <datalist id="categoryList">
+                  <option value="Personal"></option>
+                  <option value="Work"></option>
+                  <option value="medical"></option>
+                  <option value="travel"></option>
+                </datalist>
+                <input type="date" id="dateInput">
+            
+                <input type="time" id="timeInput">
+                
+                <button id="addBtn">Add</button>
+                
+                <button id="sortBtn">Sort by Date</button>
+                
+                <label><input type="checkbox" id="shortlistBtn"> Incomplete First </label>
+                
+              </div>
+        
+              <table id="todoTable" class=" todo-block">
+                <tr>
+                  <td></td>
+                  <td>Date</td>
+                  <td>Time</td>
+                  <td>to-do</td>
+                  <td>
+                    <select id="categoryFilter">
+                    </select>
+                  </td>
+                  <td></td>
+                </tr>
+              </table>
+            </div>
+        
+          </div> <!-- class="todo-grid-parent" -->
+        
+          <div class="todo-overlay" id="todo-overlay">
+            <div class="todo-modal" id="todo-modal">
+              <div class="todo-input todo-block">
+                <span>To-do: </span>
+                <input type="text" placeholder="Enter new to-do" id="todo-edit-todo">
+                <span>Category: </span>
+                <input type="text" placeholder="Enter category" list="categoryList"  id="todo-edit-category">
+                <datalist id="categoryList">
+                  <option value="Personal"></option>
+                  <option value="Work"></option>
+                </datalist>
+                <span>Date:</span>
+                <input type="date" id="todo-edit-date">
+                <span>Time:</span>
+                <input type="time" id="todo-edit-time">
+                <span></span>
+                <button id="changeBtn">Save Change</button>
+              </div>
+            </div>
+            <div class="todo-modal-close-btn" id="todo-modal-close-btn">X</div>
+          </div>
+        </div>
+
+            
+
+        <div class="box box2">   
+            <div class="todo-calendar ">
+              <div id='calendar'></div>
+            </div>
+        </div>
+            
+          
+            <div class="box box3">
+                <section id="app">
+                  <h1>
+                    <span id="ville"></span>
+                    <span class="tooltip"> Taper une autre ville</span>
+                  </h1>
+                  <i class="wi "> </i>
+                  <h2>
+                    <span id="temperature"></span> c°(<span id="conditions">
+                      
+                    </span>)
+                  </h2>
+                </section>
+                <br>
+                <div class="horloge">
+                  <div class="heures"></div>
+                  <div class="dates"></div>
+                </div>
+            </div>
+
+            <div class="box box4" onload="doShowAll()"> 
+              <p>Insert items and quantity for your shopping cart. </p>
+                <form name=ShoppingList>
+
+                  <div id="main">
+                    <table>
+                      <tr>
+
+                        <td><input type=text name=name  placeholder="Item"></td>
+                        <td><input type=text name=data  placeholder="Quantity"></td>
+
+                      </tr>
+
+                      <tr>
+                        <td>
+                            <input type=button value="Save"   onclick="SaveItem()"> 
+                            <input type=button value="Update" onclick="ModifyItem()"> 
+                            <input type=button value="Delete" onclick="RemoveItem()">
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <div id="items_table">
+                    <h3>Shopping List</h3>
+                    <table id=list></table>
+                    <p>
+                      <label><input type=button value="Clear" onclick="ClearAll()">
+                        <i>* Delete all items</i></label>
+                    </p>
+                  </div>
+                </form>
+            </div>
+            
+            <div class="box box5">  
+
+              <table class="numero">
+                <thead>
+                    <tr>
+                      <th colspan="2">Numeros Urgents</th>
+                    </tr>
+                </thead>
+             
+              <div>
+                <tr>
+                  <td><h2>Police</h2></td>
+                  <td><h3>117</h3></td>
+                </tr>
+                <tr>
+                  <td><h2>Pompier</h2> </td>            
+                  <td><h3>118</h3> </td>  
+                </tr>
+                <tr>          
+                  <td><h2>Ambulance</h2></td>             
+                  <td><h3>114</h3></td>  
+                </tr> 
+                <tr>       
+                  <td><h2>Etranger</h2></td>              
+                  <td><h3>112</h3></td>  
+                </tr>   
+              </div> 
+            </table>   
+           </div>
+      </div>
+      </div>
+    </main>
+
+
+    <script src="./app.js"></script>
+    <script src="todo.js" defer></script>
+    <script src="date.js" ></script>
+    <script src="panier.js"></script>
+
+    <footer class="footer container f-body-2 color-secondary">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img
+          alt="Creative Commons License"
+          src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png"
+        />
+      </a>
+      This work is licensed under a
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        Creative Commons Attribution-ShareAlike 4.0 International License
+      </a>
+    </footer>
+   
+  </body>
+</html>
