@@ -3,6 +3,30 @@
  * ====================================
  */
 
+ .clear{
+   background-image: url('../img/clair.png');
+ }
+
+ .clouds{
+   background-image: url('../img/couvert.jpg');
+ }
+
+ .rain{
+   background-image: url('../img/pluie.png');
+ }
+
+ .snow{
+   background-image: url('../img/neige.jpg');
+ }
+
+ .fog{
+   background-image: url('../img/couvert.jpg');
+ }
+
+ .mist{
+  background-image: url('../img/brouillard.jpg');
+}
+
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -11,6 +35,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #fafafa;
   color: #000;
+  
 }
 
 * {
@@ -105,11 +130,7 @@ body {
   border-color : #262c42;
 }
 
-.box4{
-  
-  border-style: solid;
-  border-color :#262c42;
-}
+
 
 .box5{
   
@@ -172,6 +193,82 @@ tfoot {
 }
 
 
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+.box4 {
+    background: url(https://images.unsplash.com/photo-1463490093487-b0ffe9b8e140?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=fd7561cb19fe69d1809ff2df9b7ddf39&auto=format&fit=crop&w=1350&q=80) center center;
+    background-size: cover;
+    font-family: 'Lobster', cursive;
+}
+
+.containers {
+    width: 500px;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, .6);
+    text-align: center;
+    padding: 15px;
+}
+
+h1 {
+    font-size: 2em;
+    text-shadow: 5px 3px 2px #556;
+}
+
+#intro {
+    font-size: 1.1em;
+    color: #753;
+    font-weight: bold;
+}
+
+#userinput {
+    height: 2em;
+    padding: 0 5px;
+}
+
+#userinput:hover {
+   
+    color: #fff;
+}
+
+#enter {
+    height: 2em;
+    width: 6em;
+    cursor: pointer;
+    border-radius: 8px;
+    background: #986;
+    font-weight: bold;
+}
+
+#enter:hover {
+    background: #011112;
+    color: #fff;
+}
+
+ul {
+    list-style: none;
+}
+
+span {
+    font-size: 1.5em;
+    line-height: 1.8em;
+    position: relative;
+}
+
+span::before,
+span::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+}
+
+
+.done {
+    text-decoration: line-through;
+}
+
+
+
+
 /**
 * horloge et date 
 *====================================
@@ -187,9 +284,9 @@ tfoot {
 }
 
 .heures{
-  width: 100px;
-  font-size: 30px;
-  font-weight:100 ;
+  width: 80px;
+  font-size: 25px;
+  font-weight:80 ;
   font-family: 'Rowdies', cursive;
   padding-bottom: 5px;
   border-bottom: 1px solid rgba(10, 10, 10, 0,2);
@@ -198,10 +295,10 @@ tfoot {
 .dates{
  
   font-size: 18px;
-  font-weight:100 ;
+  font-weight:80 ;
   padding-bottom: 5px;
   font-family: 'Rowdies', cursive;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
 
@@ -217,7 +314,8 @@ tfoot {
 #items_table h3 {
 	font-size: 18px;
 	margin-top: 0px;
-	font-family: sans-serif;
+  font-family: sans-serif;
+  background-image:url('../img/numeroUrgent.jpg');
 }
 
 td,th {

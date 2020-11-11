@@ -132,7 +132,7 @@
         </div>
             
           
-            <div class="box box3">
+            <div class="box3">
                 <section id="app">
                   <h1>
                     <span id="ville"></span>
@@ -144,48 +144,30 @@
                       
                     </span>)
                   </h2>
-                </section>
-                <br>
+                  <br>
                 <div class="horloge">
                   <div class="heures"></div>
                   <div class="dates"></div>
                 </div>
+                </section>
 
             </div>
 
-            <div class="box box4" onload="doShowAll()"> 
-              <p>Insert items and quantity for your shopping cart. </p>
-                <form name=ShoppingList>
-
-                  <div id="main">
-                    <table>
-                      <tr>
-
-                        <td><input type=text name=name  placeholder="Item"></td>
-                        <td><input type=text name=data  placeholder="Quantity"></td>
-
-                      </tr>
-
-                      <tr>
-                        <td>
-                            <input type=button value="Save"   onclick="SaveItem()"> 
-                            <input type=button value="Update" onclick="ModifyItem()"> 
-                            <input type=button value="Delete" onclick="RemoveItem()">
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-
-                  <div id="items_table">
-                    <h3>Shopping List</h3>
-                    <table id=list></table>
-                    <p>
-                      <label><input type=button value="Clear" onclick="ClearAll()">
-                        <i>* Delete all items</i></label>
-                    </p>
-                  </div>
-                </form>
+            <div class="box box4" > 
+              
+              <div class="containers">
+                <h1>Shopping List</h1>
+                <p id="intro">Remember get these when go shopping!</p>
+                <input id="userinput" type="text" placeholder="enter items">
+                <button id="enter">Add</button>
+                <ul>
+                
+                </ul>
             </div>
+             
+            </div>
+              
+            
             
             <div class="box box5">  
 

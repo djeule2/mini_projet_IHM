@@ -56,7 +56,7 @@ function displayWeatherInfos(data){
     document.querySelector('#conditions').textContent = capitalize(description);
     document.querySelector('i.wi').className= weatherIcons[conditions];
    
-   // document.box3.className=conditions.toLowerCase();
+     document.querySelector('#app').className=conditions.toLowerCase();
 }
 
 const ville = document.querySelector('#ville');
