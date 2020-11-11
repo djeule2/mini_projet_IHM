@@ -12,7 +12,7 @@ function todoMain() {
     selectElem,
     todoList = [],
     calendar,
-    shortlistBtn,
+   // shortlistBtn,
     changeBtn,
     todoTable;
 
@@ -31,7 +31,7 @@ function todoMain() {
     addButton = document.getElementById("addBtn");
     sortButton = document.getElementById("sortBtn");
     selectElem = document.getElementById("categoryFilter");
-    shortlistBtn = document.getElementById("shortlistBtn");
+   // shortlistBtn = document.getElementById("shortlistBtn");
     changeBtn = document.getElementById("changeBtn");
     todoTable = document.getElementById("todoTable");
   }
@@ -40,7 +40,7 @@ function todoMain() {
     addButton.addEventListener("click", addEntry, false);
     sortButton.addEventListener("click", sortEntry, false);
     selectElem.addEventListener("change", multipleFilter, false);
-    shortlistBtn.addEventListener("change", multipleFilter, false);
+    //shortlistBtn.addEventListener("change", multipleFilter, false);
 
     document.getElementById("todo-modal-close-btn").addEventListener("click", closeEditModalBox, false);
 
@@ -48,6 +48,8 @@ function todoMain() {
   }
 
   function addEntry(event) {
+    let erreur;
+    event.preventDefault();
 
     let inputValue = inputElem.value;
     inputElem.value = "";
@@ -55,12 +57,41 @@ function todoMain() {
     let inputValue2 = inputElem2.value;
     inputElem2.value = "";
 
-    let dateValue = dateInput.value;
+    let dateValue = dateInput.valueAsNumber;
     dateInput.value = "";
 
     let timeValue = timeInput.value;
     timeInput.value = "";
 
+    if(!inputValue){
+      erreur = "please put description";
+    }
+    
+    if(!inputValue2){
+      erreur = "please put categorie";
+    }
+    
+    if(!dateValue){
+      erreur = "please put date";
+    }
+    
+    if(!timeValue){
+      erreur = "please put time";
+    }
+    if(erreur){
+      //event.preventDefault();
+     alert(erreur);
+      return 
+    }
+    var alarm = new Date(dateValue);
+    var alarmTime = new Date(alarm);
+   // var alarmTime= new Date(alarm.getUTCFullYear(), alarm.getUTCMonth(), alarm.getUTCDay, alarm.getUTCHours(), alarm.getUTCMinutes(), alarm.getUTCSeconds());
+    var differenceInMs = alarmTime.getTime() - (new Date()).getTime();
+  
+    if(differenceInMs<0){
+      alert('Specified time is already passed');
+      return;
+    }
     let obj = {
       id: _uuid(),
       todo: inputValue,
@@ -109,10 +140,13 @@ function todoMain() {
 
   }
 
+ 
   function save() {
     let stringified = JSON.stringify(todoList);
     localStorage.setItem("todoList", stringified);
   }
+
+ 
 
   function load() {
     let retrieved = localStorage.getItem("todoList");
@@ -224,9 +258,23 @@ function todoMain() {
     tdElem3.dataset.id = id;
     //tdElem2.addEventListener("dblclick", allowEdit, false);
 
+    
+    function confirmer()
+    {
+      var x = confirm("Are you sure you want to delete?");
+      if (x)
+          return true;
+      else
+        return false;
+    }
 
     function deleteItem() {
+     if( !confirmer()){
+       return
+     }
+    
       trElem.remove();
+
       updateSelectOptions();
 
       for (let i = 0; i < todoList.length; i++) {
@@ -491,4 +539,5 @@ function todoMain() {
     }
   }
 
+  
 }

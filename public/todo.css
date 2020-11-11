@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Rowdies&family=Titillium+Web&display=swap');
 
 .strike {
   text-decoration: line-through;
@@ -46,12 +45,14 @@ h3 {
   padding: 1rem;
   border-radius: 20px;
   color: #a11e12;
+  margin: 0px auto 0px auto
 }
 
 @media screen and (max-width: 767px) {
   /* for mobile or small screen device */
   #todoTable, .todo-calendar{
     margin-top: 1rem;
+   
   }
 }
 
@@ -68,8 +69,6 @@ h3 {
     font-size:x-small;
  
     padding-top: -1px;
-
-    top: 0;
   }
 }
 
@@ -88,6 +87,7 @@ h3 {
   transition: transform 250ms;
   z-index: 2;
 }
+
 
 .todo-modal{
   min-width: 50vw;

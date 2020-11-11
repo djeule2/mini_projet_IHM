@@ -62,10 +62,12 @@
                 <input type="time" id="timeInput">
                 
                 <button id="addBtn">Add</button>
+               
                 
                 <button id="sortBtn">Sort by Date</button>
-                
-                <label><input type="checkbox" id="shortlistBtn"> Incomplete First </label>
+               <!--- <button onclick="setAlarm(this);" id ="alarmButton">Set Alarm</button>-->
+               
+              <!--- <label><input type="checkbox" id="shortlistBtn"> Incomplete First </label>----->
                 
               </div>
         
@@ -79,7 +81,9 @@
                     <select id="categoryFilter">
                     </select>
                   </td>
-                  <td></td>
+                  <td>
+                    <button onclick="confirmer()">Supprimer</button>
+                  </td>
                 </tr>
               </table>
             </div>
@@ -97,16 +101,26 @@
                   <option value="Personal"></option>
                   <option value="Work"></option>
                 </datalist>
+
                 <span>Date:</span>
                 <input type="date" id="todo-edit-date">
                 <span>Time:</span>
                 <input type="time" id="todo-edit-time">
                 <span></span>
                 <button id="changeBtn">Save Change</button>
+
               </div>
             </div>
             <div class="todo-modal-close-btn" id="todo-modal-close-btn">X</div>
           </div>
+
+          <!----
+
+          <div id= "alarmOptions" style="display: none;">
+          <button onclick="snooze();">snooze 5 Minutes </button>
+        <button onclick="stopAlarm();">Stop Alarm</button></div> -->
+
+
         </div>
 
             
@@ -136,6 +150,7 @@
                   <div class="heures"></div>
                   <div class="dates"></div>
                 </div>
+
             </div>
 
             <div class="box box4" onload="doShowAll()"> 
@@ -205,7 +220,7 @@
       </div>
     </main>
 
-
+    
     <script src="./app.js"></script>
     <script src="todo.js" defer></script>
     <script src="date.js" ></script>
